@@ -32,6 +32,19 @@
                     /* background-origin : 배경 이미지가 어디부터 시작될지 */
 
         #page4 { background: #ff0 url("./bg2.png") center center/100% auto no-repeat;}
+        
+        #page { overflow: hidden; }
+        #page5 #vs { width: 100%; height: auto; max-height: 100vh; }
+        .vs img { display: block; width: 100%; height: auto; }
+
+        #page5 .vs img { filter: blur(10px);}
+        #page6 .vs img { filter: brightness(50%);}
+        #page7 .vs img { filter: contrast(50%);}
+        #page8 .vs img { filter: grayscale(50%);}           /* 무채색 : 흰색, 검은색, 회색 */
+        #page9 .vs img { filter: invert(90%);} 
+        #page10 .vs img { filter: hue-rotate(90deg);}       /* 현재 색깔의 90도 방향의 색깔을 계산  */
+        #page11 .vs img { filter: saturate(20%);}           /* 색을 뺴는 역할 = 옛날 사진 느낌  */
+        #page12 .vs img { filter: sepia(60%);}
     </style> 
 </head>
 <body>
@@ -48,6 +61,54 @@
         </section>
         <section class="page" id="page4">
             <h2 class="page_tit">페이지제목4</h2>
+        </section>
+        <section class="page" id="page5">
+            <h2 class="page_tit">페이지제목5</h2>
+            <figure class="vs">
+                <img src="./bg1.jpg" alt="배너1">
+            </figure>
+        </section>
+        <section class="page" id="page6">
+            <h2 class="page_tit">페이지제목6</h2>
+            <figure class="vs">
+                <img src="./bg1.jpg" alt="배너1">
+            </figure>
+        </section>
+        <section class="page" id="page7">
+            <h2 class="page_tit">페이지제목7</h2>
+            <figure class="vs">
+                <img src="./bg1.jpg" alt="배너1">
+            </figure>
+        </section>
+        <section class="page" id="page8">
+            <h2 class="page_tit">페이지제목8</h2>
+            <figure class="vs">
+                <img src="./bg1.jpg" alt="배너1">
+            </figure>
+        </section>
+        <section class="page" id="page9">
+            <h2 class="page_tit">페이지제목9</h2>
+            <figure class="vs">
+                <img src="./bg1.jpg" alt="배너1">
+            </figure>
+        </section>
+        <section class="page" id="page10">
+            <h2 class="page_tit">페이지제목10</h2>
+            <figure class="vs">
+                <img src="./bg1.jpg" alt="배너1">
+            </figure>
+        </section>
+        <section class="page" id="page11">
+            <h2 class="page_tit">페이지제목11</h2>
+            <figure class="vs">
+                <img src="./bg1.jpg" alt="배너1">
+            </figure>
+        </section>
+        <section class="page" id="page12">
+            <h2 class="page_tit">페이지제목12</h2>
+            <figure class="vs">
+                <img src="./bg1.jpg" alt="배너1">
+            </figure>
         </section>
     </div>
     <div id="con">

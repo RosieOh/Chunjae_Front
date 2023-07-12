@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 속성(properties) - 글자/문단 관련 속성</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+Makasar&display=swap" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: 'NanumBarunpen';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        #area { width: 1200px; margin: 20px auto; }
+        .f1 { color: #930; font-size: 20px; line-height: 2; font-weight: bold;}
+        .f1 span { font-weight: 200; color: deepskyblue;}
+        .f2 { font-stretch: extra-expanded; text-transform: uppercase; } /* 대부분의 폰트가 적용이 되지 않음 */
+        .f3 { text-transform: capitalize; font-variant: small-caps; }
+        .f4 { font-size: 20px; text-indent: 24px; font-style: italic; 'NanumBarunpen' cursive; text-decoration: overline; letter-spacing: 8px;}
+        .f5 { font-size: 20px; text-indent: -24px; font-style: oblique; font-family: 'NanumBarunpen' cursive; text-decoration: line-through; word-spacing: 20px; }
+        .f6 { text-decoration: underline; }
+        .f7 {white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+        .f8 { width: 120px; margin: 40px auto; word-break: keep-all;}
+    </style>
+</head>
+<body>
+    <div id="area">
+        <p class="f1">천재못말리는신짱구천방지축앞뒤짱구1 <span>천재못말리는신짱구</span>천방지축앞뒤짱구1 천재못말리는신짱구천방지축앞뒤짱구1 우리나라 천재못말리는신짱구천방지축앞뒤짱구1 korean dhxogns korean dhxogns</p>
+        <p class="f2">천재못말리는신짱구천방지축앞뒤짱구2 천재못말리는신짱구천방지축앞뒤짱구2 천재못말리는신짱구천방지축앞뒤짱구2 우리나라 천재못말리는신짱구천방지축앞뒤짱구2 korean dhxogns korean dhxogns</p>
+        <p class="f3">천재못말리는신짱구천방지축앞뒤짱구3 천재못말리는신짱구천방지축앞뒤짱구3 천재못말리는신짱구천방지축앞뒤짱구3 우리나라 천재못말리는신짱구천방지축앞뒤짱구3 korean dhxogns korean dhxogns</p>
+        <p class="f4">천재못말리는신짱구천방지축앞뒤짱구4 천재못말리는신짱구천방지축앞뒤짱구4 천재못말리는신짱구천방지축앞뒤짱구4 우리나라 천재못말리는신짱구천방지축앞뒤짱구4 korean dhxogns korean dhxogns</p>
+        <p class="f5">천재못말리는신짱구천방지축앞뒤짱구5 천재못말리는신짱구천방지축앞뒤짱구5 천재못말리는신짱구천방지축앞뒤짱구5 우리나라 천재못말리는신짱구천방지축앞뒤짱구5 korean dhxogns korean dhxogns</p>
+        <p class="f6">천재못말리는신짱구천방지축앞뒤짱구6 천재못말리는신짱구천방지축앞뒤짱구6 천재못말리는신짱구천방지축앞뒤짱구6 우리나라 천재못말리는신짱구천방지축앞뒤짱구6 korean dhxogns korean dhxogns</p>
+        <p class="f7">천재못말리는신짱구천방지축앞뒤짱구7 천재못말리는신짱구천방지축앞뒤짱구7 천재못말리는신짱구천방지축앞뒤짱구7 우리나라 천재못말리는신짱구천방지축앞뒤짱구7 korean dhxogns korean dhxogns</p>
+        <p class="f8">천재못말리는신짱구천방지축앞뒤짱구8 천재못말리는신짱구천방지축앞뒤짱구8 천재못말리는신짱구천방지축앞뒤짱구8 우리나라 천재못말리는신짱구천방지축앞뒤짱구8 korean dhxogns korean dhxogns</p>
+        <p class="f9">천재못말리는신짱구천방지축앞뒤짱구9 천재못말리는신짱구천방지축앞뒤짱구9 천재못말리는신짱구천방지축앞뒤짱구9 우리나라 천재못말리는신짱구천방지축앞뒤짱구9 korean dhxogns korean dhxogns</p>
+        <p class="f10">천재못말리는신짱구천방지축앞뒤짱구10 천재못말리는신짱구천방지축앞뒤짱구10 천재못말리는신짱구천방지축앞뒤짱구10 우리나라 천재못말리는신짱구천방지축앞뒤짱구10 korean dhxogns korean dhxogns</p>
+    </div>
+    <br><hr><br>
+    <div class="con">
+        <h1>글자/문단 관련 속성</h1>
+        <p><b>중요한 것들은 볼드체 쳐놨음</b></p>
+        <p>글자 관련 : <b>color, font-size, font-weight</b>, font-stretch(장평), text-transform(대, 소문자 바꿔주는 역할),
+            font-varient(소문자의 크기처럼 아예 줄임), <b>font-style(기울어지게), font-family(글꼴)</b>,
+            font-kerning(자간, 커서가 놓여있을 때 적용), @font-face</p>
+
+        <p>문단 관련 : letter-spacing(글자사이의 간격), <b>line-height, word-spacing(단어 사이의 간격)
+            text-align, text-indent(들여쓰기), text-decoration</b>, text-justify, text-orientation,
+            text-overflow, white-space, word-break</p>
+        <br><hr><br>
+
+        <h2>글자색</h2>
+        <p>color : 웹컬러명 | 16진 코드 | rgb()/rgba() | hs1()/hsla()</p>
+        <br><hr><br>
+
+        <h2>글자 크기</h2>
+        <p>font-size : keyword | length</p>
+        <p>keyword : xx-small | smaller | small | medium |
+            large | x-large | xx-large
+        </p>
+        <p>length unit : px, em(rem), pt 등</p>
+        <p>keyword 를 사용하여 글자크기를 지정할 경우는 브라우저 마다 모두 다르므로,
+            length 값으로 지정하는 것이 좋다.
+        </p>
+        <br><hr><br>
+
+        <h2>글자 두께</h2> <!-- 대부분의 폰트가 적용이 되지 않음 -->
+        <p>font-weight : keyword | number(단위가 붙지 않음) </p>
+        <p>keyword : border | bold | normal | lighter</p>
+        <p>number : 100 ~ 900로 100단위로 기재. 100이 가장 가늘고, 900이 가장 두껍다.</p>
+        <br><hr><br>
+
+        <h2>글자 장평</h2>
+        <p>font-stretch : ultra-condensed(가늘다) | extra-condensed | condensed
+            | semi-condensed | normal | semi-expanded | expanded | extra-expanded | ultra-expanded </p>    
+        <p>장평(font-stretch)이란? 한 글자의 가로크기와 세로크기의 비율이며, 기준은 세로크기에 비해 가로크기가 얼마나 큰지에 대하여 값을 부여한다.</p>    
+        <br><hr><br>
+        
+        <h2>글자 스타일</h2>
+        <p>font-style : normal | italic | oblique |</p>
+        <p>기울임꼴의 유무를 나타내는 속성</p>
+        <br><hr><br>
+
+
+        <h2>글자 변형</h2>
+        <p>font-varient : normal | small-caps</p>
+        <p>영문의 경우 대문자와 소문자의 크기가 각각 달라서 균일하게 글자크기나 폭을 지정하기 힘들므로 대문자를 소문자 크기로 조절하기 위한 속성</p>
+        <br><hr><br>
+
+        <h2>글자 변환</h2>
+        <p>text-transform : none | uppercase | lowercase | capitalize</p>
+        <p>해당 단어나 문장의 영문을 대문자 또는 소문자로 변환할 때 사용</p>
+        <br><hr><br>
+
+        <h2>글꼴 지정</h2>
+        <p>font-family : 1차폰트, [, 2차폰트][, 3차폰트]</p>
+        <p>서버에 설치되어 있는 폰트의 이름을 지정하며, 만약 폰트의 이름 중간에 공백이 있거나 
+            아니면 한글과 같은 영문이 아닌 경우는 반드시 인용부호인 ""나 ''로 감싸서 표기해야하며,
+            만약, 1차 폰트가 존재하지 않는 경우는 2차 폰트가 적용되고, 여기서 2차 폰트도 적용될 수 없다면,
+            3차 폰트가 적용하게 된다.
+            다만, 3차 폰트가 적용되지 못하는 경으를 대비하여, 3차 폰트는 브라우저 기본적으로 제공하는 폰트를 지정하여야 함.</p>
+        <p>브라우저 제공하는 기본 폰트는 해당 서버나 클라이언트에 설치가 되어있지 않아도 자공 제공되는데, 
+            sans-serif(고딕계열), serif(명조 계열), cursive(궁서 계열), monospace(가로와 세로의 장평이 같은 폰트),
+            fantasy(디자인 계열) 등을 말함.</p>
+        <br><hr><br>
+
+        <h2>커서 위치의 자간</h2>
+        <p>font-kerning : auto | normal | none</p>      <!-- 상속과 초기화 X -->
+        <br><hr><br>
+
+        <h2>자간</h2>
+        <p>letter-spacing : normal | length </p>
+        <p>length : px, em, pt 등의 단위를 주로 활용</p>
+        <p>해당 요소 안에 글자와 글자 사이의 간격</p>
+        <br><hr><br>
+
+        <h2>어간</h2>
+        <p>word-spacing : normal | length</p>
+        <p>length : px, em, pt 등의 단위를 주로 활용</p>
+        <p>단어와 단어 사이의 간격</p>
+        <br><hr><br>
+
+        <h2>행 높이</h2>
+        <p>line-height : normal | number | length </p>
+        <p>값으로 숫자만 기재할 경우는 em단위처럼 현재 문단의 글자 크기의 배수가 되며,
+            숫자 뒤에 단위가 들어가는 경우는 해당하는 단위의 크기가 적용됨.</p>
+        <br><hr><br>
+
+        <h2>문단 정렬</h2>
+        <p>text-align : left | right | center | justify</p>
+        <p>문단의 가로방향에 대한 정렬</p>
+        <p></p>
+        <br><hr><br>
+
+        <h2>들여쓰기/내어쓰기</h2>
+        <p>text-indent : length</p>
+        <p>length 단위 : px, %, pt 등</p>
+        <p>들여쓰기 : 다른 줄에 비해 첫번째 줄이 더 들어가게 쓰는 것<br>
+            text-indent:20px;</p>
+        <p>내어쓰기 : 다른 줄에 비해 첫번쨰 줄이 더 나오게 쓰는 것<br>
+            text-indent:-20px;</p>
+        <br><hr><br>
+        
+        <h2>글자 장식</h2>
+        <p>text-decoration : none | underline | underline | overline | line-through</p>
+        <p>글자의 위, 중간, 아래에 줄을 표시하도록 하는 속성</p>
+        <p>none을 제외한 다른 값은 중복해서 사용할 수 있다.<br>
+            text-decoration:overline underline<br>
+            text-decoration:overline underline double #369, overline wave #c00;</p>
+        <h3>세부 속성</h3>
+        <p>text-decoration-color : 줄의 색</p>
+        <p>text-decoration-line : 줄의 위치(underline/overline/line-through)</p>
+        <p>text-decoration-style : 줄의 종류(solid/wave/double/dotted/dashed)</p>
+        <br><hr><br>
+
+        <h2>배분 정렬</h2>
+        <p>text-justify : auto | none | inter-character | inter-word</p>
+        <p>단어 또는 글자 단위로 한 줄의 데이터를 분량을 똑같이 배분정렬 할 수 있는 속성</p>
+        <br><hr><br>
+
+        <h2>글자 진행 방향</h2>
+        <p>text-orientation : mixed | upright | sideways | sideways-right|
+            use-glyph-orientation</p>                                   <!--use-glyph-orientation : 사용자의 글꼴에 맞춤-->
+        <br><hr><br>
+
+        <h2>글자 흘러 넘침</h2>
+        <p>text-overflow : clip | ellipsis | 특정문자</p>
+        <p>text-overflow는 overflow:hidden이며, white-space:nowrap 인 경우에 유효하다.</p>
+        <br><hr><br>
+
+        <h2>내용 보호/줄 끝 처리</h2>
+        <p>white-space : normal | nowrap(보호x, 자동줄바꿈x) | pre(자동 줄바꿈X) | pre-line(자동 줄바꿈O)
+            | pre-wrap(줄바꿈, 끝에 엔터 친것도 밑으로 내려보냄) </p>
+        <p>하나의 단어가 한 줄에 입력되어야만 하기 때문에 그 때 한 줄에 단어가 배치가 되는지,
+            아니면, 영문 배치 문법을 무시하고, 단어 중간을 자를지 또는 하나의 문장을 한 줄로만 표시할지
+            그 문장의 줄의 끝을 어떻게 처리할지 정하는 속성</p>
+        <br><hr><br>
+
+        <h2>단어 처리</h2>
+        <p>word-break : normal | break-all | keep-all | break-word</p>
+        <p>한 줄 또는 한 문장 안에서의 단어의 끝 처리 부분을 어떻게 할지 정하는 속성</p>
+        <p></p>
+        <br><hr><br>
+
+        <!-- <h2>행 높이</h2>
+        <p>line</p>
+        <p></p>
+        <p></p>
+        <br><hr><br> -->
+    </div>
+
+
+</body>
+</html>
