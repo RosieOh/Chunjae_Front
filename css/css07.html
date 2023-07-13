@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 속성(properties) - 기타 속성</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+Makasar&display=swap" rel="stylesheet">
+    <style>
+        #canvas, #con { width: 1280px; margin: 60px auto; }
+        .mouse { width: 1280px; clear: both; min-height: 100vh; }
+        .mouse:after { content: ""; clear: both; display: block; width: 100%; }
+        .mouse ul { list-style: none; clear: both;}
+        .mouse li { width: 100px; height: 100px; margin: 15px; border: 1px solid #333; float: left; }
+        .mouse li.alias { cursor: alias; } 
+        .mouse li.all-scroll { cursor: all-scroll; }
+        .mouse li.auto { cursor: auto; }
+        .mouse li.cell { cursor: cell; }
+        .mouse li.col-size { cursor: col-resize;}
+        .mouse li.context-menu { cursor: context-menu;}
+        .mouse li.copy { cursor: copy;}
+        .mouse li.crosshair {cursor: crosshair;}
+        .mouse li.default {cursor: default;}
+        .mouse li.e-resize {cursor: e-resize;}
+        .mouse li.ew-resize {cursor: ew-resize;}
+        .mouse li.grab {cursor: grab;}
+        .mouse li.grabbing {cursor: grabbing;}
+        .mouse li.help {cursor: help;}
+        .mouse li.move { cursor: move;}
+        .mouse li.n-resize {cursor: n-resize;}
+        .mouse li.no-drop {cursor: no-drop;}
+        .mouse li.none {cursor: none;}
+        .mouse li.not-allowd {cursor:not-allowed}
+        .mouse li.pointer {cursor: pointer;}
+        .mouse li.progress {cursor: progress;}
+        .mouse li.row-resize {cursor: row-resize;}
+        .mouse li.s-resize {cursor: s-resize;}
+        .mouse li.text {cursor: text;}
+        .mouse li.url {cursor: url(mouse_2.png) 20 30, auto;}
+        .mouse li.w-resize {cursor: w-resize;}
+        .mouse li.wait {cursor: wait;}
+        .mouse li.zoom-in {cursor: zoom-in;}
+        .mouse li.zoom-out {cursor: zoom-out}
+        .mouse li.url2 {cursor: url(mouse_1.png) 20 30, auto;}  /* 이미지 마우스 크기 조절 필요 */
+        </style>
+        <style>
+            .list li { }
+            .list li.disc { list-style: disc;}
+            .list li.armenian { list-style: armenian; }
+            .list li.circle { list-style-type: circle; }
+            .list li.cjk-ideographic { list-style-type: cjk-ideographic; }
+            .list li.decimal { list-style-type: decimal; }
+            .list li.georgian { list-style-type: georgian; }
+            .list li.hebrew { list-style-type: hebrew; }
+            .list li.hiragana { list-style-type: hiragana; }
+            .list li.katakana { list-style-type: katakana; }
+            .list li.lower-alpha {list-style-type: lower-alpha; }
+            .list li.lower-greek { list-style-type: lower-greek; }
+            .list li.lower-latin { list-style-type: lower-latin; }
+            .list li.lower-roman { list-style-type: lower-roman; }
+            .list li.none { list-style-type: none; }
+            .list li.square { list-style-type: square; }
+            .list li.upper-alpha { list-style-type: upper-alpha; }
+            .list li.upper-greek { list-style-type: upper-greek; }
+            .list li.upper-latin { list-style-type: upper-latin;}
+            .list li.upper-roman { list-style-type: upper-roman; }
+            .list li.img { list-style-image: url(text_1.png); }
+        </style>
+
+        <style>
+            .ts { clear: both; width: 100%; }
+            .tit-box { width: 900px; height: 100px; line-height: 100px; text-align: center; }
+            .tit-box h2 { font-size: 60px; color: deepskyblue; }
+
+            .ts-tit1 { text-shadow: 3px 3px #0c4569, -3px -3px #b4dffa;}
+
+            .ts-tit2 { text-shadow: -3px -3px #0c4569, 3px 3px #b4dffa;}
+
+            .tit-box:nth-child(3) { background-color: #fff; }
+            .tit-box h2.ts-tit3 {color: #000; text-shadow: 2px 2px 0px #eee, 4px 4px 0px #000}
+
+            .tit-box:nth-child(4) { background-color: #000; }
+            .tit-box h2.ts-tit4 { color: #fff; text-shadow: 0 0 1px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 60px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 160px #ff00de;}
+
+            .tit-box h2.ts-tit5 { text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; color: white;}
+
+            .tit-box:nth-child(6) { background-color: #565656;}
+            .tit-box h2.ts-tit6 { color: #333; text-shadow: 0 1px #777, 0 -1px #000;}
+
+            .tit-box:nth-child(7) { background-color: navy;}
+            .tit-box h2.ts-tit7 { font-family: 'Staatiliches', cursive; color: #F1C164; text-shadow: 5px 5px #2D63A7;}
+
+            .tit-box:nth-child(8) { background-color: navy; }
+            .tit-box h2.ts-tit8 { padding-top: 20px; font-family: 'Staatiliches', cursive; color: #F1C164; text-shadow: 5px 5px #2D63A7; text-decoration: overline; text-decoration-style: wavy;}
+
+            .tit-box h2.ts-tit9 { text-shadow: 1px 1px 0px #0c4569,
+                2px 2px 0px #0c4569, 3px 3px 0px #0a3b5a,
+                4px 4px 0px #0a4b5a, 5px 5px 0px #072a40,
+                6px 6px 0px #072a50, 7px 7px 0px #03141e,
+                8px 8px 0px #03141e, 9px 9px 0px #010507,
+                10px 10px 0px #010507;}
+
+            .tit-box h2.ts-tit10 { }
+
+        </style>
+</head>
+<body>
+    <div id="canvas">
+        <article class="mouse">
+            <ul>
+                <li class="alias">모양1</li>
+                <li class="all-scroll">모양2</li>
+                <li class="auto">모양3</li>
+                <li class="cell">모양4</li>
+                <li class="col-size">모양5</li>
+                <li class="context-menu">모양6</li>
+                <li class="copy">모양7</li>
+                <li class="crosshair">모양8</li>
+                <li class="default">모양9</li>
+                <li class="e-resize">모양10</li>
+                <li class="ew-resize">모양11</li>
+                <li class="grab">모양12</li>
+                <li class="grabbing">모양13</li>
+                <li class="help">모양14</li>
+                <li class="move">모양15</li>
+                <li class="n-resize">모양16</li>
+                <li class="no-drop">모양17</li>
+                <li class="none">모양18</li>
+                <li class="not-allowed">모양19</li>
+                <li class="pointer">모양20</li>
+                <li class="progress">모양21</li>
+                <li class="row-resize">모양22</li>
+                <li class="s-resize">모양23</li>
+                <li class="text">모양24</li>
+                <li class="url">모양25</li>
+                <li class="w-resize">모양26</li>
+                <li class="wait">모양27</li>
+                <li class="zoom-in">모양28</li>
+                <li class="zoom-out">모양29</li>
+                <li class="url2">모양30</li>
+
+            </ul>
+        </article>
+
+        <article class="list">
+            <ul>
+                <li class="disc">목록 기호1<br>disc</li>
+                <li class="armenian">목록 기호2<br>armenian</li>
+                <li class="circle">목록 기호3<br>circle</li>
+                <li class="cjk-ideographic">목록 기호4<br>cjk-ideographic</li>
+                <li class="decimal">목록 기호5<br>decimal</li>
+                <li class="georgian">목록 기호6<br>georgian</li>
+                <li class="hebrew">목록 기호7<br>hebrew</li>
+                <li class="hiragana">목록 기호8<br>hiragana</li>
+                <li class="katakana">목록 기호9<br>katakana</li>
+                <li class="lower-alpha">목록 기호10<br>lower-alpha</li>
+                <li class="lower-greek">목록 기호11<br>lower-greek</li>
+                <li class="lower-latin">목록 기호12<br>lower-latin</li>
+                <li class="lower-roman">목록 기호13<br>lower-roman</li>
+                <li class="none">목록 기호14<br>none</li>
+                <li class="square">목록 기호15<br>square</li>
+                <li class="upper-alpha">목록 기호16<br>upper-alpha</li>
+                <li class="upper-greek">목록 기호17<br>upper-greek</li>
+                <li class="upper-latin">목록 기호18<br>upper-latin</li>
+                <li class="upper-roman">목록 기호19<br>upper-roman</li>
+                <li class="img">목록 기호20<br>image</li>
+            </ul>
+        </article>
+
+        <div class="post">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex omnis debitis cum? Ipsum aliquam quis expedita, temporibus vitae nihil asperiores nobis vero quisquam ullam quae voluptatum eum, magnam sunt odit.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum dolores nisi cumque odit veniam quae fuga laudantium officiis quaerat voluptates, amet, commodi vero illo, dignissimos iure mollitia totam adipisci. Reprehenderit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A cumque labore sequi impedit odio molestiae similique qui omnis necessitatibus, ea non! Doloribus amet a qui explicabo saepe dolorum blanditiis odit.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis sunt vel qui, maiores necessitatibus amet voluptate nihil, cum error voluptates ipsum corporis, nulla autem vitae earum numquam voluptatibus? Temporibus, dolorum?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ab delectus dicta, fugit amet eligendi error saepe dolore esse sequi pariatur! Debitis recusandae cupiditate earum assumenda quisquam magnam cum nostrum?</p>
+        </div>
+        <br><hr><br>
+        
+        <article class="ts">
+            <div class="tit-box">
+                <h2 class="ts-tit1">lorem ipsum</h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit2">lorem ipsum</h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit3">lorem ipsum</h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit4">lorem ipsum</h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit5">lorem ipsum</h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit6">lorem ipsum</h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit7">lorem ipsum</h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit8">lorem ipsum</h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit9">lorem ipsum</h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit10">lorem ipsum</h2>
+            </div>
+        </article>
+
+    </div>
+    <div id="con">
+        <h1>목록 속성</h1>
+        <p>list-style : type position image</p>
+        <p>메뉴나 목록의 기호를 표시하는 속성</p>
+        <br><hr><br>
+
+        <h2>목록 기호 - 순서가 없는 거</h2>
+        <p>list-style-type : disc | circle | square <br>
+            decimal | armenian | georgian | hebrew | hiragana<br>
+            katakana | lower-alpha | lower-greek |lower-latin<br>
+            lower-roman | upper-alpha | upper-greek | upper-latin<br>
+            upper-roman | cjk-ideographic
+        </p>
+        <p>li 요소에 표시되는 목록 기호로 부모 요소가 ol인 경우는 숫자가 순서대로 앞에 표기되고, ul인 경우는 disc가 앞에 표시된다.</p>
+        <br><hr><br>
+
+        <h2>목록 기호 위치</h2>
+        <p>list-style-position : inside | outside</p>
+        <br><hr><br>
+
+        <h2>목록 이미지</h2>
+        <p>list-style-image : none | url(파일 경로 및 이름)</p>
+        <p>목록 기호에 들어갈 자리에 이미지가 표시되며, 파일경로나 이름은 ""(큰따옴표), ''(작은따옴표)로 묶을 수 있으며, 생략 가능하다.<br>
+            다만, 중간에 띄워쓰기나 한글 및 특수문자로 이루어져 있는 경우는 반드시 따옴표로 묶어야 한다.
+        </p>
+        <br><hr><br>
+
+        <h1>마우스 포인터</h1>
+        <p>cursor : none| alias | all-scroll | auto | cell | col-size | context-menu
+            | copy | crosshair | default | e-resize | n-resize | s-resize | w-resize
+            | ew-resize | ne-resize | se-resize | ns-resize | nwse-resize | se-resize 
+            | sw-resize | grab | grabbing | help | move | no-drop | not-allowed | pointer
+            | progress | row-resize | zoom-in | zoom-out | text | url(파일 경로 및 이름) | 
+        </p>
+        <p>해당 요소의 영역에 마우스 포인터가 위치되면, 그 마우스 포인터 모양을 지정할 수 있는 속성 </p>
+        <br><hr><br>
+
+        <h1>그림자 속성</h1>
+        <p>shadow : text-shadow, box-shadow</p>
+        <p>x텍스트나 박스의 외부 그림자 또는 내부 그림자를 말하며, 크기 속성에 포함되지 않는다.</p>
+        <br><hr><br>
+
+        <h1>텍스트 그림자</h1>
+        <p>text-shadow : x-length y-length blur-length color</p>
+        <p>x를 양의 값으로 입력하면, 그림자의 방향은 오른쪽에 발생되며, 음의 값으로 입력하면, 그림자의 방향은 왼쪽에 발생됨. <br>
+        y를 양의 값으로 입력하면, 그림자의 방향은 아래쪽에 발생되며, 음의 값으로 입력하면 그림자의 방향은 위쪽에 발생된다. <br>
+        x y blur color 양의 여러 차례에 걸쳐 지정하면, 입체 모양의 그림자가 표시된다.
+        </p>
+        <br><hr><br>
+
+        <h2>박스 그림자</h2>
+        <p>box-shadow : x-length y-length blur-length color</p> <!-- 컬러만 지정 -->
+        <p>box-shadow : x-length y-length blur-length color spread-length color</p> <!-- spread 값에 컬러까지 지정 -->
+        <p>x를 양의 값으로 입력하면, 그림자의 방향은 오른쪽에 발생되며, 음의 값으로 입력하면, 그림자의 방향은 왼쪽에 발생됨. <br>
+            y를 양의 값으로 입력하면, 그림자의 방향은 아래쪽에 발생되며, 음의 값으로 입력하면 그림자의 방향은 위쪽에 발생된다. <br>
+            x y blur color 양의 여러 차례에 걸쳐 지정하면, 입체 모양의 그림자가 표시된다.
+        </p>
+        <p>box-shadow나 text-shadow의 그림자의 양은 px또는 pt 단위로 기재한다.</p>
+    </div>
+</body>
+</html>
