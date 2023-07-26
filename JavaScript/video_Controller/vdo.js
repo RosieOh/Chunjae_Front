@@ -1,61 +1,69 @@
 /* 버튼 선택자 */
-var video = ;
-var restart = ;
-var play = ;
-var pause = ;
-var stop = ;
-var timeCurrent = ;
-var rew = ;
-var fastFwd = ;
-var mute = ;
-var unmute = ;
-var vol = ;
-var vmup = ;
-var vmdown = ;
-var full = ;
-var sizeup = ;
-var sizedown = ;
-var progress = ;
-var progressBar = ;
-var volTxt = ; 
+var video = document.getElementById("video");
+var restart = document.getElementById("restart");
+var play = document.getElementById("play");
+var pause = document.getElementById("pause");
+var stop = document.getElementById("stop");
+var timeCurrent = document.getElementById("currentTime");
+var rew = document.getElementById("rew");
+var fastFwd = document.getElementById("fastFwd");
+var mute = document.getElementById("mute");
+var unmute = document.getElementById("unmute");
+var vol = document.getElementById("vol");
+var vmup = document.getElementById("vmup");
+var vmdown = document.getElementById("vmdown");
+var full = document.getElementById("full");
+var sizeup = document.getElementById("sizeup");
+var sizedown = document.getElementById("sizedown");
+var progress = document.getElementById("progress");
+var progressBar = document.getElementById("progressBar");
+var volTxt = document.getElementById("volTxt"); 
 video.load();  //비디오 로딩
 video.setAttribute("loop","5"); //비디오 반복 횟수 지정
 video.volume = 1;   //비디오의 볼륨값 초기화
-
+// video.currentTime
 /* 동영상 재생 제어 처리부 */
 //재시작
-restart.addEventListener("click", function () {        });
+restart.addEventListener("click", function () {restartPlay();});
 //10초 뒤로 가기
-rew.addEventListener("click", function(){        skip(-10);    });
+rew.addEventListener("click", function(){skip(-10);});
 //10초 앞으로 가기  
-fastFwd.addEventListener("click", function(){        skip(10);    });  
+fastFwd.addEventListener("click", function(){skip(10);});  
 //재생 함수 호출
-play.addEventListener("click", function () {            });
+play.addEventListener("click", function () { playPause();});
 //일시정지 함수 호출
-pause.addEventListener("click", function () {           });
+pause.addEventListener("click", function () {playPause();});
 //정지 함수 호출
-stop.addEventListener("click", function () {          });
+stop.addEventListener("click", function () {stopPlayer();});
 //음소거 함수 호출
-mute.addEventListener("click", function () {        });
+mute.addEventListener("click", function () {mutePlayer("mute");});
 //음삽입 함수 호출
-unmute.addEventListener("click", function () {        });
+unmute.addEventListener("click", function () {mutePlayer("unmute");});
 //볼륨 조절바 기능 정의 및 호출
 vol.addEventListener("change", function(){  
     video.volume = this.value/1000;
     volTxt.innerText = parseInt(video.volume*100)+"%";
 });
-vmup.addEventListener("click", function () {        volumeUpDown("up");    });//볼륨업
-vmdown.addEventListener("click", function () {        volumeUpDown("down");    });//볼륨다운
-full.addEventListener("click", function () {        fullScreen();    });//풀스크린
+vmup.addEventListener("click", function () {volumeUpDown("up");});//볼륨업
+vmdown.addEventListener("click", function () {volumeUpDown("down");});//볼륨다운
+full.addEventListener("click", function () {fullScreen();});//풀스크린
 var w=640;
 video.width=w;
-sizeup.addEventListener("click", function(){    video.width += 200;    }); //사이즈업
-sizedown.addEventListener("click", function(){  video.width -= 200;    }); //사이즈 다운
+sizeup.addEventListener("click", function(){video.width += 200;}); //사이즈업
+sizedown.addEventListener("click", function(){video.width -= 200;}); //사이즈 다운
 
 //처음부터 다시 재생
-function restartPlay() {   }
+function restartPlay() {  
+    video.currentTime = 0;
+    video.play();
+ }
 //앞으로, 뒤로 가기 함수 
-function skip(value) {  } 
+function skip(value) {
+    video.currentTime = video.currentTime + value;
+    if( video.currentTime < 10 && video.currentTime > 0) {
+        video.duration;
+    }
+ } 
 //재생일시정지 함수
 function playPause () {  
     if (video.paused) { video.play(); play.style.display = "none"; pause.style.display = "inline-block";
